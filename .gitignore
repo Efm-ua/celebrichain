@@ -1,0 +1,37 @@
+# Віртуальне середовище
+venv/
+.env
+
+# Кеш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Дистрибутиви
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Логи
+*.log
+
+# Локальні налаштування IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Файли операційної системи
+.DS_Store
+Thumbs.db

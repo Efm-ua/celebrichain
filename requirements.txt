@@ -1,0 +1,4 @@
+# Основні залежності
+aiogram>=3.0.0,<4.0.0  # Бібліотека для Telegram бота
+python-dotenv>=1.0.0   # Для роботи з .env файлами
+anthropic>=0.5.0       # Клієнт для API Anthropic Claude
