@@ -1,0 +1,16 @@
+{
+    "welcome_message": "Halo, {user_name}! Saya Pembantu Selebriti. Bagaimana saya boleh membantu anda hari ini?",
+    "faq_text": "# Soalan Lazim\n\n1. **Bot ini tentang siapa?**\n   Bot ini adalah mengenai selebriti Malaysia dan menyediakan maklumat berdasarkan pangkalan pengetahuan tempatan.\n\n2. **Bagaimana bot ini berfungsi?**\n   Bot ini menggunakan model bahasa Anthropic Claude 3.5 Sonnet untuk memproses soalan anda dan memberikan jawapan berdasarkan maklumat yang disahkan.\n\n3. **Bolehkah saya bertanya apa-apa soalan?**\n   Anda boleh bertanya soalan berkaitan dengan selebriti tersebut. Bot akan cuba menjawab menggunakan pangkalan pengetahuannya dan tidak akan mereka-reka maklumat.\n\n4. **Dalam bahasa apa saya boleh berkomunikasi dengan bot?**\n   Pada masa ini, bot menyokong bahasa Inggeris dan bahasa Melayu.",
+    "info_text": "# Mengenai Bot Ini\n\nIni adalah bot Pembantu Selebriti yang direka untuk menjawab soalan tentang selebriti Malaysia tertentu. Bot ini menggunakan maklumat yang disahkan dari pangkalan pengetahuan tempatan dan tidak mereka-reka fakta.\n\nBot ini kini berada dalam peringkat MVP (Produk Minimum Berdaya Maju) dan sedang dibangunkan untuk memberikan peminat maklumat yang tepat tentang selebriti kegemaran mereka.\n\nDibangunkan dengan ❤️ menggunakan Python, Aiogram, dan Anthropic Claude.",
+    "button_faq": "Soalan Lazim ❓",
+    "button_info": "Tentang Bot ℹ️",
+    "button_back": "Kembali ke Menu 🔙",
+    "welcome": "Selamat datang ke Bot CelebriChain!",
+    "language_changed": "Bahasa telah ditukar ke Bahasa Melayu",
+    "language_already_selected": "Bahasa ini sudah dipilih",
+    "faq": "Soalan Lazim...",
+    "info": "Maklumat tentang CelebriChain...",
+    "back": "Kembali",
+    "knowledge_base_error": "Maaf, saya menghadapi masalah mengakses pangkalan pengetahuan saya sekarang. Sila cuba lagi kemudian.",
+    "no_relevant_info": "Saya tidak mempunyai sebarang maklumat yang relevan tentang topik itu dalam pangkalan pengetahuan saya."
+}

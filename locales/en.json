@@ -1,0 +1,16 @@
+{
+    "welcome_message": "Hello, {user_name}! I'm Celebrity Assistant. How can I help you today?",
+    "faq_text": "# Frequently Asked Questions\n\n1. **Who is this bot about?**\n   This bot is about a Malaysian celebrity and provides information based on a local knowledge base.\n\n2. **How does the bot work?**\n   The bot uses Anthropic Claude 3.5 Sonnet language model to process your questions and provide answers based on verified information.\n\n3. **Can I ask any question?**\n   You can ask questions related to the celebrity. The bot will try to answer using its knowledge base and will not make up information.\n\n4. **In which languages can I communicate with the bot?**\n   Currently, the bot supports English and Malay languages.",
+    "info_text": "# About This Bot\n\nThis is a Celebrity Assistant bot designed to answer questions about a specific Malaysian celebrity. The bot uses verified information from a local knowledge base and does not make up facts.\n\nThe bot is currently in MVP (Minimum Viable Product) stage and is being developed to provide fans with accurate information about their favorite celebrity.\n\nDeveloped with ❤️ using Python, Aiogram, and Anthropic Claude.",
+    "button_faq": "FAQ ❓",
+    "button_info": "About Bot ℹ️",
+    "button_back": "Back to Menu 🔙",
+    "welcome": "Welcome to CelebriChain Bot!",
+    "language_changed": "Language has been changed to English",
+    "language_already_selected": "This language is already selected",
+    "faq": "Frequently Asked Questions...",
+    "info": "Information about CelebriChain...",
+    "back": "Back",
+    "knowledge_base_error": "Sorry, I'm having trouble accessing my knowledge base right now. Please try again later.",
+    "no_relevant_info": "I don't have any relevant information about that topic in my knowledge base."
+}
