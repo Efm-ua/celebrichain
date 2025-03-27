@@ -247,38 +247,45 @@ async def echo_handler(message: types.Message) -> None:
     
     # Отримуємо текст запиту користувача
     query = message.text
+    logging.info(f"Отримано запит від користувача {user_id}: {query}")
     
     # Надсилаємо індикатор набору тексту, щоб користувач знав, що бот обробляє запит
     await bot.send_chat_action(chat_id=message.chat.id, action="typing")
     
     try:
         # Читаємо базу знань
+        logging.info("Читаємо базу знань...")
         knowledge_text = read_knowledge_base("knowledge_base.txt")
         
         if not knowledge_text:
             # Якщо база знань недоступна
+            logging.error("База знань недоступна або порожня")
             await message.answer(
                 translation_manager.get_text("knowledge_base_error", language)
             )
             return
         
         # Шукаємо релевантний контекст
-        relevant_context = find_relevant_context(query, knowledge_text)
+        logging.info("Пошук релевантного контексту...")
+        relevant_context = find_relevant_context(query, knowledge_text, max_tokens=1000)
         
         if not relevant_context:
             # Якщо релевантна інформація не знайдена
+            logging.info(f"Релевантний контекст не знайдено для запиту: {query}")
             await message.answer(
                 translation_manager.get_text("no_relevant_info", language)
             )
             return
         
         # Читаємо інструкції персони
+        logging.info("Читаємо інструкції персони...")
         persona_instructions = read_persona_instructions()
         if not persona_instructions:
             logging.warning("Файл інструкцій персони не знайдено. Використовуємо базові інструкції.")
             persona_instructions = "Ти - віртуальний помічник зірки. Відповідай дружньо та інформативно."
         
         # Генеруємо відповідь за допомогою LLM
+        logging.info("Генеруємо відповідь за допомогою LLM...")
         llm_response = await generate_response(
             query=query,
             context=relevant_context,
@@ -286,11 +293,17 @@ async def echo_handler(message: types.Message) -> None:
             max_tokens=1000
         )
         
-        # Відповідаємо користувачу згенерованою відповіддю без меню
-        await message.answer(
-            llm_response,
-            parse_mode="Markdown",
-        )
+        if "На жаль" in llm_response and ("помилка" in llm_response or "недоступн" in llm_response):
+            logging.warning(f"LLM повернув повідомлення про помилку: {llm_response}")
+            # Якщо LLM повернув повідомлення про помилку, просто передаємо його користувачу
+            await message.answer(llm_response)
+        else:
+            # Відповідаємо користувачу згенерованою відповіддю без меню
+            logging.info("Відправляємо відповідь користувачу")
+            await message.answer(
+                llm_response,
+                parse_mode="Markdown",
+            )
         
     except Exception as e:
         logging.error(f"Помилка при обробці запиту: {e}")
