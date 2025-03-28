@@ -1,4 +1,13 @@
-# Основні залежності
-aiogram>=3.0.0,<4.0.0  # Бібліотека для Telegram бота
-python-dotenv>=1.0.0   # Для роботи з .env файлами
-anthropic>=0.5.0       # Клієнт для API Anthropic Claude
+aiogram
+python-dotenv
+anthropic
+langchain
+sentence-transformers 
+torch 
+scikit-learn
+numpy
+# --- Примітка: ---
+# Замість torch можна використовувати tensorflow, якщо ви надаєте перевагу цій бібліотеці, 
+# але sentence-transformers часто краще працює з torch.
+# Переконайтеся, що у вас встановлена відповідна версія torch для вашої системи (CPU/GPU).
+# Зазвичай `pip install torch` встановлює версію для CPU.
