@@ -1,29 +1,30 @@
+$workflow = @"
 name: Deploy static content to Pages
 
 on:
-  # Запускається при push в гілку master
+  # Р—Р°РїСѓСЃРєР°С”С‚СЊСЃСЏ РїСЂРё push РІ РіС–Р»РєСѓ master
   push:
     branches: ["master"]
-  # Дозволяє запускати цей workflow вручну з вкладки Actions
+  # Р”РѕР·РІРѕР»СЏС” Р·Р°РїСѓСЃРєР°С‚Рё С†РµР№ workflow РІСЂСѓС‡РЅСѓ Р· РІРєР»Р°РґРєРё Actions
   workflow_dispatch:
 
-# Встановлення дозволів для завдання GitHub Pages
+# Р’СЃС‚Р°РЅРѕРІР»РµРЅРЅСЏ РґРѕР·РІРѕР»С–РІ РґР»СЏ Р·Р°РІРґР°РЅРЅСЏ GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Дозволяє тільки один одночасний деплой
+# Р”РѕР·РІРѕР»СЏС” С‚С–Р»СЊРєРё РѕРґРёРЅ РѕРґРЅРѕС‡Р°СЃРЅРёР№ РґРµРїР»РѕР№
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Одне завдання деплоя
+  # РћРґРЅРµ Р·Р°РІРґР°РЅРЅСЏ РґРµРїР»РѕСЏ
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: `${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,10 +32,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
-          # Вказуємо шлях до папки, яку потрібно опублікувати
+          # Р’РєР°Р·СѓС”РјРѕ С€Р»СЏС… РґРѕ РїР°РїРєРё, СЏРєСѓ РїРѕС‚СЂС–Р±РЅРѕ РѕРїСѓР±Р»С–РєСѓРІР°С‚Рё
           path: 'authtest'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
+"@
+
+Set-Content -Path ".github\workflows\pages.yml" -Value $workflow
