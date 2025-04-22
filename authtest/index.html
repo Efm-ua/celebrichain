@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Mini App initData</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    textarea { width: 100%; height: 100px; font-size: 1em; }
+    button { margin-top: 1em; padding: 0.5em 1em; font-size: 1em; }
+    .info { margin-top: 1em; color: #555; }
+  </style>
+</head>
+<body>
+  <h2>Telegram Mini App: initData</h2>
+  <p>Скопіюйте <b>initData</b> для тестування бекенду.</p>
+  <textarea id="initData" readonly></textarea>
+  <br>
+  <button onclick="copyInitData()">Скопіювати</button>
+  <div class="info" id="info"></div>
+  <script>
+    function showInitData() {
+      const initData = window.Telegram?.WebApp?.initData || '';
+      document.getElementById('initData').value = initData;
+      if (!initData) {
+        document.getElementById('info').textContent = 'initData не знайдено. Запустіть цю сторінку як Mini App через Telegram.';
+      } else {
+        document.getElementById('info').textContent = 'initData отримано. Можна копіювати.';
+      }
+    }
+    function copyInitData() {
+      const ta = document.getElementById('initData');
+      ta.select();
+      document.execCommand('copy');
+      document.getElementById('info').textContent = 'Скопійовано!';
+    }
+    window.addEventListener('DOMContentLoaded', showInitData);
+  </script>
+</body>
+</html> 
