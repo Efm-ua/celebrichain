@@ -1,0 +1,40 @@
+name: Deploy static content to Pages
+
+on:
+  # Запускається при push в гілку master
+  push:
+    branches: ["master"]
+  # Дозволяє запускати цей workflow вручну з вкладки Actions
+  workflow_dispatch:
+
+# Встановлення дозволів для завдання GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Дозволяє тільки один одночасний деплой
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Одне завдання деплоя
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Вказуємо шлях до папки, яку потрібно опублікувати
+          path: 'authtest'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
