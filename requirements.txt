@@ -6,6 +6,8 @@ sentence-transformers
 torch 
 scikit-learn
 numpy
+sqlalchemy[asyncio] # Додано для роботи з БД (включає SQLAlchemy)
+aiosqlite         # Додано (драйвер для асинхронної роботи з SQLite)
 # --- Примітка: ---
 # Замість torch можна використовувати tensorflow, якщо ви надаєте перевагу цій бібліотеці, 
 # але sentence-transformers часто краще працює з torch.

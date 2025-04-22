@@ -12,5 +12,9 @@
     "info": "Information about CelebriChain...",
     "back": "Back",
     "knowledge_base_error": "Sorry, I'm having trouble accessing my knowledge base right now. Please try again later.",
-    "no_relevant_info": "I don't have any relevant information about that topic in my knowledge base."
+    "no_relevant_info": "I don't have any relevant information about that topic in my knowledge base.",
+    "context_not_found": "Sorry, I couldn't find relevant information for that query.",
+    "llm_error": "Sorry, I'm having trouble generating a response right now. Please try again.",
+    "error_occurred": "An error occurred. Please try again later.",
+    "feedback_thanks": "Thanks for your feedback!"
 }

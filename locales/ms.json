@@ -12,5 +12,9 @@
     "info": "Maklumat tentang CelebriChain...",
     "back": "Kembali",
     "knowledge_base_error": "Maaf, saya menghadapi masalah mengakses pangkalan pengetahuan saya sekarang. Sila cuba lagi kemudian.",
-    "no_relevant_info": "Saya tidak mempunyai sebarang maklumat yang relevan tentang topik itu dalam pangkalan pengetahuan saya."
+    "no_relevant_info": "Saya tidak mempunyai sebarang maklumat yang relevan tentang topik itu dalam pangkalan pengetahuan saya.",
+    "context_not_found": "Maaf, saya tidak menemui maklumat yang relevan untuk pertanyaan itu.",
+    "llm_error": "Maaf, saya menghadapi masalah menjana respons sekarang. Sila cuba lagi.",
+    "error_occurred": "Ralat telah berlaku. Sila cuba sebentar lagi.",
+    "feedback_thanks": "Terima kasih atas maklum balas anda!"
 }
